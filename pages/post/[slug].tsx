@@ -1,13 +1,18 @@
 import { client } from "@/lib/sanity.client";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { Post } from "@/typings";
+import { Layout } from "@/components";
 
 type Props = {
   post: Post;
 };
 
 const Post = ({ post }: Props) => {
-  return <div>{post.title}</div>;
+  return (
+    <Layout title={post.title}>
+      <div>{post.title}</div>
+    </Layout>
+  );
 };
 
 export default Post;
